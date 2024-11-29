@@ -1,0 +1,71 @@
+Graphical Interface check:
+	ls /usr/bin/*session
+	expected output:
+		/usr/bin/dbus-run-session
+
+UFW Firewall check:
+	sudo ufw status (must be active)
+	sudo service ufw status (active)
+	
+SSH Check:
+	sudo service ssh status
+	
+Debian Check:
+	uname --kernel-version ("Debian")
+
+Group check:
+	getent group sudo user42 ("ablodorn")
+
+Add user:
+	sudo adduser "name"
+
+Add group:
+	sudo addgroup "name"
+	
+Add user to group:
+	sudo adduser "username" "groupname"
+
+Check hostname:
+	hostname ("ablodorn42")
+
+Modify hostname:
+	sudo nano /etc/hostname
+	sudo nano /etc/hosts
+	sudo reboot
+
+Partitions Check:
+	lsblk
+
+Sudo install check:
+	which sudo
+
+Sudo rules check:
+	nano /etc/sudoers.d/sudo_config
+
+Sudo logs check:
+	/var/log/sudo/sudo_config
+
+UFW install check:
+	dpkg -s ufw
+
+Rule Creation:
+	sudo ufw allow 8080
+	sudo ufw status (numbered)
+	sudo delete "number"
+	
+SSH Check:
+	which ssh
+	sudo service ssh status
+	ssh root@localhost -p 4242 (fail)
+	ssh "user"@localhost -p 4242
+	
+Cron:
+	sudo crontab -u root -e
+	
+Port:
+	nano /etc/ssh/sshd_config
+	nano /etc/ssh/ssh_config
+	
+Password policies:
+	nano /etc/login.defs
+	nano /etc/pam.d/common-password
